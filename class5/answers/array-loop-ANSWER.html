@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Array Loop</title>
+</head>
+<body>
+  <ul class="cheeses">
+    <!-- Nothing here, use javascript to embed the list items -->
+  </ul>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script>
+    $(function() {
+      // Here is an array
+      const cheese = ["Manchego","Provolone","Chedar","Colby","Feta","Goat Cheese","Gorgonzola","Romano","Limburger","Brie","Ricota","Roquefort","Smoked Gouda","Blue Cheese"];
+
+
+      const showSortedCheese = function(cheeseArr){
+        // make a copy of the array so we don't change the original
+        const cheeseArrCopy = [...cheeseArr];
+
+        // sort the cheese
+        const sortedCheese = cheeseArrCopy.sort();
+
+        // map over each cheese and append a list item with the name of a cheese inside of it
+
+        const cheeseHtml = sortedCheese.map(function(cheeseItem){
+          return `<li>${cheeseItem}</li>`;
+        }).join('');
+
+        // Finally use jQuery to dump your html into the unordered list above
+        $('ul.cheeses').append(cheeseHtml);
+      }
+
+      showSortedCheese(cheese);
+
+
+      // BONUS: When you click a cheese, it should be removed from the list
+      $('ul.cheeses').on('click','li',function() {
+        $(this).remove();
+      });
+
+    });
+  </script>
+</body>
+</html>

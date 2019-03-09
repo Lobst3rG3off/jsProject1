@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Debugging</title>
+</head>
+<body>
+	<script>
+
+		// Fix the code so that you are able to console log `Hello <name>` and then `Goodbye <name>` on page load
+
+		// Use the `debugger` statement to help you debug this code!
+
+		function sayHello(name) {
+			console.log(`Hello ${name}`);
+		}
+
+		function sayBye() {
+			const name = getName();
+			console.log(`Goodbye ${name}`);
+		}
+
+		function getName() {
+			prompt("What is your name?");
+		}
+
+		sayHello();
+	
+	</script>
+	<script src="index.js"></script>
+</body>
+</html>

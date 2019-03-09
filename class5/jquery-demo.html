@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Jquery Demo</title>
+	<style>
+		main {
+			text-transform: uppercase;
+			font-family: sans-serif;
+			font-size: 2rem;
+			padding-top: 40px;
+			text-align: center;
+		}
+
+		.demos {
+			display: flex;
+			justify-content: space-around;
+			margin-top: 150px;
+		}
+
+		span {
+			margin-bottom: 20px;
+			display: block;
+		}
+
+		.box {
+			width: 100%;
+			height: 200px;
+			background-color: palevioletred;
+		}
+
+		.demo1 .box {
+			background-color: orangered;
+		}
+
+		.demo2 .box {
+			background-color: mediumslateblue;
+		}
+
+		.demo3 .box {
+			background-color: limegreen;
+		}
+
+		.demo4 .box {
+			background-color: gold;
+		}
+
+		.hidden {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<p>Try clicking on the text below</p>
+		<div class="demos">
+			<div class="demo demo1">
+				<span>Show</span>
+				<div class="box hidden"></div>
+			</div>
+			<div class="demo demo2">
+				<span>Hide</span>
+				<div class="box"></div>
+			</div>
+			<div class="demo demo3">
+				<span>Slide</span>
+				<div class="box"></div>
+			</div>
+			<div class="demo demo4">
+				<span>FadeOut</span>
+				<div class="box"></div>
+			</div>
+		</div>
+	</main>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		$(`.demo1 span`).on('click', function() {
+			$(this).next('.box').show();
+		});
+		$(`.demo2 span`).on('click', function() {
+			$(this).next('.box').hide();
+		});
+		$(`.demo3 span`).on('click', function() {
+			$(this).next('.box').slideToggle();
+		});
+		$(`.demo4 span`).on('click', function() {
+			$(this).next('.box').fadeOut();
+		});
+	</script>
+</body>
+</html>

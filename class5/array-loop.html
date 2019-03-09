@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Array Loop</title>
+</head>
+<body>
+  <ul class="cheeses">
+
+
+    <!-- Nothing here, use javascript to embed the list items -->
+  </ul>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script>
+    $(function() {
+      // Here is an array
+      const cheese = ["Manchego","Provolone","Chedar","Colby","Feta","Goat Cheese","Gorgonzola","Romano","Limburger","Brie","Ricota","Roquefort","Smoked Gouda","Blue Cheese"];
+
+      // Write a function that will:
+
+        // Take the cheese array as an argument
+
+function cheeseList(arr) {
+//make copy of array
+const arrCopy = arr.slice();
+
+
+arrCopy.pop();
+console.log(arrCopy);
+console.log(arr);
+//sort array
+arrCopy.sort();
+console.log(arrCopy);
+ // Finally use jQuery to dump your html into the unordered list above
+const listItems = arrCopy.map(function(item) {
+const htmlString = `<li> ${item} </li>`;
+return htmlString;
+});
+
+for (let i = 0; i < listItems.length; i = i + 1) {
+$('ul.cheeses').append(listItems [i]);
+}
+}
+
+cheeseList(cheese);
+
+
+
+
+        // Sort the cheeses alphabetically (don't forget to make a copy of the array so you don't modify the original. Look up the array spread operator)
+
+        // Map over each cheese and append a list item with the name of a cheese inside of it
+
+
+
+       
+
+
+      // BONUS: When you click a cheese, it should be removed from the list
+
+    });
+  </script>
+</body>
+</html>

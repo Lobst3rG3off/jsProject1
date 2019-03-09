@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Events in jQuery</title>
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+
+		body {
+			padding: 20px;
+			margin: 0;
+		}
+
+		.row {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.box {
+			width: 200px;
+			height: 200px;
+			transition: height 0.2s ease-in-out;
+		}
+
+		.box.expanded {
+			height: 600px;
+		}
+
+		.box1 {
+			background-color: navy;
+		}
+
+		.box2 {
+			background-color: orchid;
+		}
+
+		.box3 {
+			background-color: royalblue;
+		}
+
+		.box4 {
+			background-color: teal;
+		}
+
+		.box5 {
+			background-color: tomato;
+		}
+	</style>
+</head>
+<body>
+	<div class="row">
+		<div class="box box1"></div>
+		<div class="box box2"></div>
+		<div class="box box3"></div>
+		<div class="box box4"></div>
+		<div class="box box5"></div>
+	</div>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script>
+		
+		
+	
+
+$(function() {
+
+// using jQuery, attach an event listener to each box
+const $boxes = $('.box');
+
+console.log($boxes);
+
+$boxes.on('click', function() {
+	// When we click on a box, that one should open (with a class of 'expanded')
+	$boxes.removeClass('expanded')
+$(this).addClass('expanded');
+
+	// All the other boxes should close
+	//on method 
+// 	$(function() {
+//     const $boxes = $('.box');
+//     $boxes.on('click', function() {
+//         $boxes.not($(this)).removeClass('expanded');
+//         $(this).addClass('expanded');
+//     });
+// });
+		
+
+});
+
+
+
+});	
+	</script>
+</body>
+</html>
